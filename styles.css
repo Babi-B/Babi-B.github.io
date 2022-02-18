@@ -136,6 +136,7 @@ nav span:hover{
     font-family: var(--script);
     font-size: 1.4rem;
     font-weight: bold;
+    margin: 1rem;
 }
 
 .s2{
@@ -158,7 +159,6 @@ nav span:hover{
     height: 7rem;
     margin-top: 2rem;
     margin-right: 3rem;
-    /* animation: spin 2s infinite; */
     transition: transform 1s;
     transform-style: preserve-3d;
 }
@@ -174,7 +174,7 @@ nav span:hover{
 }
 .s3{
     text-align: center;
-    padding: 2rem;
+    padding: 3rem;
 }
 .projects{
     display: flex;
@@ -196,6 +196,7 @@ nav span:hover{
 }
 .project img:hover{
     height: 12rem;
+    width: auto;
     transform: scale(1.1);
 }
 .project .subtitle{
@@ -205,6 +206,7 @@ nav span:hover{
 }
 .read-more{
     margin-top: 1rem;
+    font-weight: bold;
 }
 .prjt-dspt{
     margin: 1rem;
@@ -253,13 +255,17 @@ nav span:hover{
     .project:last-child{
         grid-area: 2 / 2 / 2 / 4;
     }
-    
 }
 
-@media screen and (max-width:900px) {
-    .sub-sctn, .projects{
+@media screen and (max-width:1000px) {
+    .sub-sctn{
         display: grid;
     }
+    .projects{
+        display: inline-block;
+        justify-content: center;
+    }
+    
     
     .s2{
         display:block;
@@ -268,5 +274,19 @@ nav span:hover{
     .expertise, .project{
         margin-top: 2rem;
     }
-    
+}
+
+@media screen and (max-width:550px) {
+    .hello{
+        font-size: 2rem;
+    }
+    .s1{
+        margin: 1rem;
+    }
+    .s4 i{
+        font-size: 3rem;
+    }
+    .intro{
+        width: auto;
+    }
 }
