@@ -86,7 +86,7 @@ nav span{
 nav span:hover{
     cursor: pointer;
 }
-.project-heading,.s2 .subtitle{
+.project-heading,.s2 .subtitle, .s4 .social-msg{
     text-transform: uppercase;
 }
 
@@ -115,6 +115,7 @@ nav span:hover{
 .intro:hover{
     animation: none;
 }
+
 .s1 .subtitle{
     margin-bottom: .7rem;
     font-size: var(--textsize);
@@ -190,6 +191,21 @@ nav span:hover{
 }
 .prjt-dspt{
     margin: 1rem;
+}
+
+.s4{
+    background-color: var(--secondaryColor);
+    text-align: center;
+    padding: 3rem 0;
+}
+.s4 .social-msg{
+    margin-bottom: 2rem;
+}
+
+.social-links i{
+    font-size: 5rem;
+    margin: 2rem;
+    color: initial;
 }
 
 @keyframes shake {
