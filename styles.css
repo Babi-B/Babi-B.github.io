@@ -232,3 +232,18 @@ nav span:hover{
     90% { transform: translate(1px, 2px) rotate(0deg); }
     100% { transform: translate(1px, -2px) rotate(-1deg); }
   }
+
+@media screen and (max-width:900px) {
+    .sub-sctn, .projects{
+        display: grid;
+    }
+    
+    .s2{
+        display:block;
+        padding: 2rem;  
+    }
+    .expertise, .project{
+        margin-top: 2rem;
+    }
+    
+}
