@@ -6,9 +6,119 @@
 
     --mainText:black;
     --secondaryText:#4b5156;
+
+    --quicksand:'Quicksand', sans-serif;
+    --lora :'Lora', serif;
+    --script:'Dancing Script', cursive;
+    --mono :'Oxygen Mono', monospace;
+    --textsize:1.2rem;
 }
 
 *{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+a{
+    text-decoration: none;
+}
+
+body{
+    background-color: var(--mainColor);
+    font-family: var(--quicksand);
+    color: var(--mainText);
+    font-size: var(--textsize);
+}
+
+h1, .contact{
+    font-family: var(--lora) ;
+}
+.box{
+    padding-top: 5rem;
+}
+.hello{
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.s1{
+    border: 1px solid var(--borderColor);
+    box-shadow: 0 -1px 5px 0 var(--borderColor);
+    border-radius: .3rem;
+    margin: auto 5rem;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid var(--borderColor);
+    border-radius: .3rem .3rem 0 0;
+    padding: 1rem 1.5rem;
+    font-size: 1.4rem;
+}
+
+nav span{
+    display: inline-block;
+    margin-right: .6rem;
+    font-size: 2rem;
+}
+
+.fa-sun{
+    color: goldenrod;
+}
+.fa-moon{
+    color: white;
+}
+.contact{
+    font-weight: bold;
+}
+
+nav span:hover{
+    cursor: pointer;
+}
+
+.sub-sctn{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--secondaryColor);
+    padding: 2rem;
+}
+
+.s1 img{
+    height: 15rem;
+    border-radius: 50%;
+    margin-left: 5rem;
+    border: 1px solid var(--borderColor);
+}
+
+.intro{
+    width: 20rem;
+    padding: 1rem;
+    border: 1px solid var(--borderColor);
+    line-height: 2rem;
+    box-shadow: 15px 15px 0 0 var(--secondaryText);
+}
+.job-title{
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.quote{
+    font-family: var(--script);
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.s2{
+    background-color: var(--secondaryColor);
+    display:grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 2rem;    
+}
+
+.s2 h1{
+    margin-bottom: 1rem;
 }
