@@ -148,6 +148,9 @@ nav span:hover{
 .intro:hover{
     animation: none;
 }
+.dark-box{
+    box-shadow: 15px 15px 0 0 black;
+}
 
 .s1 .subtitle{
     margin-bottom: .7rem;
@@ -213,7 +216,7 @@ nav span:hover{
 }
 
 .read-more{
-    color: #7267CB;
+    color: #685cc2;
 }
 
 .project img{
@@ -222,8 +225,6 @@ nav span:hover{
     transition: transform .3s;
 }
 .project img:hover{
-    height: 12rem;
-    width: auto;
     transform: scale(1.1);
 }
 .project .subtitle{
@@ -285,17 +286,11 @@ nav span:hover{
 }
 
 @media screen and (max-width:1000px) {
-    .sub-sctn{
-        display: grid;
-    }
-    .projects{
-        display: inline-block;
+    .projects, .s2, .sub-sctn{
+        display: flex;
+        flex-direction: column;
         justify-content: center;
-    }
-    
-    .s2{
-        display:block;
-        padding: 2rem;  
+        align-items: center;
     }
     .expertise, .project{
         margin-top: 2rem;
