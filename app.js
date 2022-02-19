@@ -29,18 +29,23 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', eve
 });
 
 
-theme.addEventListener("click", () => {
-    if(theme.classList.contains("fa-moon")){
-        window.matchMedia('(prefers-color-scheme: dark)');
-        theme.classList.toggle("fa-sun");
+theme.addEventListener("click", () => toggleDarkMode());
+
+function toggleDarkMode() {
+    if (document.documentElement.classList.contains("light")) {
+        theme.classList.add("fa-sun");
         theme.classList.remove("fa-moon");
+
+        document.documentElement.classList.remove("light")
+        document.documentElement.classList.add("dark")
+    } else{
+        theme.classList.add("fa-moon");
+        theme.classList.remove("fa-sun");
+
+        document.documentElement.classList.remove("dark")
+        document.documentElement.classList.add("light")
     }
-    else{
-        theme.classList.toggle("fa-moon");
-        theme.classList.remove("fa-sun")
-    }
-    
-})
+}
 
 function switchImages(){
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
