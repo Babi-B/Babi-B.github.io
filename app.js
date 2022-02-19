@@ -3,52 +3,53 @@ const icons = document.getElementsByClassName("icon");
 
 (function checkTheme(){
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        switchImages();
-        theme.classList.add("fa-sun");
-        theme.classList.remove("fa-moon");
-        switchImages();
+        displayDarkMode();
     }
-    else{
-        switchImages();
-        theme.classList.add("fa-moon");
-        theme.classList.remove("fa-sun")
-    }
+    else
+        displayLightMode();
 })();
 
 // Monitor theme change
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
     switchImages();
     if(event.matches.valueOf("dark")){
-        theme.classList.add("fa-sun");
-        theme.classList.remove("fa-moon");
+        displayDarkMode();
     }else{
-        switchImages();
-        theme.classList.add("fa-moon");
-        theme.classList.remove("fa-sun")
+        displayLightMode();
     }
 });
 
 
-theme.addEventListener("click", () => toggleDarkMode());
-
-function toggleDarkMode() {
-    if (document.documentElement.classList.contains("light")) {
-        theme.classList.add("fa-sun");
-        theme.classList.remove("fa-moon");
-
-        document.documentElement.classList.remove("light")
-        document.documentElement.classList.add("dark")
-    } else{
-        theme.classList.add("fa-moon");
-        theme.classList.remove("fa-sun");
-
-        document.documentElement.classList.remove("dark")
-        document.documentElement.classList.add("light")
+theme.addEventListener("click", () => {
+    if(theme.classList.contains("fa-moon") && document.documentElement.classList.contains("light")){
+        displayDarkMode();
     }
+    else
+        displayLightMode();
+});
+
+function displayDarkMode() {
+    theme.classList.add("fa-sun");
+    theme.classList.remove("fa-moon");
+    
+    document.documentElement.classList.remove("light");
+    document.documentElement.classList.add("dark");
+
+    switchImages();
+}
+
+function displayLightMode(){
+    theme.classList.add("fa-moon");
+    theme.classList.remove("fa-sun")
+
+    document.documentElement.classList.add("light");
+    document.documentElement.classList.remove("dark");
+
+    switchImages();
 }
 
 function switchImages(){
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    if (!(theme.classList.contains("fa-moon") && document.documentElement.classList.contains("light"))) {
         icons[1].src = "./img/cc-dark.png";
         icons[3].src = "./img/git-dark.png";
         icons[4].src = "./img/java-dark.png";
@@ -60,5 +61,3 @@ function switchImages(){
         icons[6].src = "./img/node.png";
     }
 }
-
-switchImages();
