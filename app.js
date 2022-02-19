@@ -2,9 +2,8 @@ const theme = document.getElementById("theme");
 const icons = document.getElementsByClassName("icon");
 
 (function checkTheme(){
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    if ((window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) || (localStorage.getItem("mode") == "dark") ) 
         displayDarkMode();
-    }
     else
         displayLightMode();
 })();
@@ -36,6 +35,8 @@ function displayDarkMode() {
     document.documentElement.classList.add("dark");
 
     switchImages();
+
+    localStorage.setItem("mode", "dark");
 }
 
 function displayLightMode(){
@@ -46,6 +47,8 @@ function displayLightMode(){
     document.documentElement.classList.remove("dark");
 
     switchImages();
+
+    localStorage.setItem("mode", "light");
 }
 
 function switchImages(){
